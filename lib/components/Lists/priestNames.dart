@@ -1,5 +1,5 @@
 List priestNames = [
-  'Fr. William Finneman, SVD', //0
+  'Most Rev. William Finneman, SVD', //0
   'Very Rev. Fr. Enrique Demond, SVD', //1
   'Rev. Fr. Jose Duserhund, SVD', //2
   'Very Rev. Fr. Karl Josef Krusenbaum, SVD', //3

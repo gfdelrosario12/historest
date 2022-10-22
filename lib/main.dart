@@ -15,24 +15,22 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
+  var colorTheme = 0xff343A8E;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          title: const Center(
-            child: Text(
-              "ASES • MAS",
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-        ),
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            flexibleSpace: const Padding(
+              padding: EdgeInsets.only(top: 35.0),
+              child: Image(image: AssetImage('assets/images/Header.png')),
+            )),
         body: currentIndex == 0 ? ReviewerPage() : QuizPage(),
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Color(0xff343A8E),
-          unselectedItemColor: Color(0xff343A8E),
+          selectedItemColor: Color(colorTheme),
+          unselectedItemColor: Color(colorTheme),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(
