@@ -2,18 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
-import 'Lists/priestNames.dart';
-import 'Lists/dates.dart';
-import '';
+import 'all.dart';
 
-class ReviewerPage extends StatefulWidget {
+class ReviewerPage extends StatelessWidget {
   ReviewerPage({super.key});
 
-  @override
-  State<ReviewerPage> createState() => _ReviewerPageState();
-}
-
-class _ReviewerPageState extends State<ReviewerPage> {
   double gapSize = 3;
 
   double dotSize = 20;
@@ -32,29 +25,24 @@ class _ReviewerPageState extends State<ReviewerPage> {
             body: SingleChildScrollView(
                 child: Column(
           children: [
-            Container(
-              child: Padding(
-                padding: EdgeInsets.only(top: 10.0),
-                child: Text(
-                  "ASES - A History",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                ),
+            Padding(
+              padding: EdgeInsets.only(top: 10.0),
+              child: Text(
+                "ASES - A History",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
             ),
             Container(),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 10.0),
-                child: Text(
-                  "The Parish Priests of the Archdiocesan Shrine of Espiritu Santo",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20.0),
-                ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 10.0),
+              child: Text(
+                "The Parish Priests of the Archdiocesan Shrine of Espiritu Santo",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0),
               ),
             ),
-            Container(
-                child: SizedBox(
+            SizedBox(
               height: 80.0,
               child: TimelineNode(
                 indicator: Card(
@@ -67,12 +55,11 @@ class _ReviewerPageState extends State<ReviewerPage> {
                     ),
                   ),
                 ),
-                endConnector: SolidLineConnector(),
+                endConnector: SolidLineConnector(color: Color(colorTheme)),
               ),
-            )),
+            ),
             for (int i = 0; i < dates.length; i++)
-              Container(
-                  child: TimelineTile(
+              TimelineTile(
                 contents: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
@@ -91,27 +78,27 @@ class _ReviewerPageState extends State<ReviewerPage> {
                   ),
                 ),
                 node: TimelineNode(
-                  indicator: DotIndicator(),
-                  startConnector: SolidLineConnector(),
-                  endConnector: SolidLineConnector(),
+                  indicator: DotIndicator(
+                    color: Color(colorTheme),
+                  ),
+                  startConnector: SolidLineConnector(color: Color(colorTheme)),
+                  endConnector: SolidLineConnector(color: Color(colorTheme)),
                 ),
-              )),
-            Container(
-              child: SizedBox(
-                height: 80.0,
-                child: TimelineNode(
-                  indicator: Card(
-                    margin: EdgeInsets.zero,
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        'End',
-                        style: TextStyle(color: Colors.white),
-                      ),
+              ),
+            SizedBox(
+              height: 80.0,
+              child: TimelineNode(
+                indicator: Card(
+                  margin: EdgeInsets.zero,
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'End',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  startConnector: SolidLineConnector(),
                 ),
+                startConnector: SolidLineConnector(color: Color(colorTheme)),
               ),
             )
           ],
