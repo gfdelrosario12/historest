@@ -1,3 +1,4 @@
+// the priest names that are displayed in reviewer page stored in a list for ease of access
 List priestNames = [
   'Most Rev. William Finneman, SVD', //0
   'Very Rev. Fr. Enrique Demond, SVD', //1

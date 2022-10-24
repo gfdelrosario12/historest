@@ -1,6 +1,4 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:timelines/timelines.dart';
 import 'all.dart';
 
 class QuizMainPage extends StatefulWidget {
@@ -11,7 +9,6 @@ class QuizMainPage extends StatefulWidget {
 }
 
 class _QuizMainPageState extends State<QuizMainPage> {
-  int score = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,23 +19,25 @@ class _QuizMainPageState extends State<QuizMainPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 "Ministry of Altar Servers - Archdiocesan Shrine of Espiritu Santo\n History Quiz - Parish Priests Edition",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: fontSize),
               ),
               TextButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Color(colorTheme)),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => QuizPage1()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const QuizPage1()));
                 },
-                child: const Text(
+                child: Text(
                   'Are you ready to take the Quiz?',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.white, fontSize: fontSize),
                 ),
               ),
             ],

@@ -1,12 +1,13 @@
-export 'globalVariables.dart';
-export 'MainConnector.dart';
-export 'QuizMainPage.dart';
-export 'QuizPage1.dart';
-export 'QuizPage2.dart';
-export 'QuizPage3.dart';
-export 'QuizPage4.dart';
-export 'QuizPage5.dart';
-export 'ResultsPage.dart';
-export 'ReviewerPage.dart';
+// contains exports for easy imports throughout the app
+export 'global_variables.dart';
+export 'main_connector.dart';
+export 'quiz_main_page.dart';
+export 'quiz_page1.dart';
+export 'quiz_page2.dart';
+export 'quiz_page3.dart';
+export 'quiz_page4.dart';
+export 'quiz_page5.dart';
+export 'results_page.dart';
+export 'reviewer_page.dart';
 export 'Lists/dates.dart';
-export 'Lists/priestNames.dart';
+export 'Lists/priest_names.dart';

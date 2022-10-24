@@ -1,3 +1,4 @@
+// the dates that are displayed in reviewer page stored in a list for ease of access
 List dates = [
   "1926 - 1929", //0
   "1930 - 1931", //1

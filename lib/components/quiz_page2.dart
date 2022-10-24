@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'all.dart';
 
-class QuizPage4 extends StatefulWidget {
-  const QuizPage4({super.key});
+class QuizPage2 extends StatefulWidget {
+  const QuizPage2({super.key});
 
   @override
-  State<QuizPage4> createState() => _QuizPage4State();
+  State<QuizPage2> createState() => _QuizPage2State();
 }
 
-class _QuizPage4State extends State<QuizPage4> {
+class _QuizPage2State extends State<QuizPage2> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -63,7 +63,7 @@ class _QuizPage4State extends State<QuizPage4> {
                     child: Image(image: AssetImage('assets/images/Header.png')),
                   )),
               body: Container(
-                margin: EdgeInsets.all(10.0),
+                margin: const EdgeInsets.all(10.0),
                 padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                   color: Color(colorTheme),
@@ -73,10 +73,11 @@ class _QuizPage4State extends State<QuizPage4> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text(
-                        "The first Parish Priest with the Monsignor Title.",
+                      Text(
+                        "Which priest took over 2 times as parish priest",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style:
+                            TextStyle(color: Colors.white, fontSize: fontSize),
                       ),
                       // ignore: unnecessary_new
                       Column(
@@ -88,68 +89,71 @@ class _QuizPage4State extends State<QuizPage4> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
-                                score += 1;
-                                print(score);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => QuizPage5()));
+                                        builder: (context) =>
+                                            const QuizPage3()));
+                              },
+                              child: Text(
+                                priestNames[3],
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                            ),
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                textStyle: TextStyle(fontSize: fontSize),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const QuizPage3()));
+                              },
+                              child: Text(
+                                priestNames[7],
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                            ),
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                textStyle: TextStyle(fontSize: fontSize),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {
+                                score += 1;
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const QuizPage3()));
+                              },
+                              child: Text(
+                                priestNames[4],
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                            ),
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                textStyle: TextStyle(fontSize: fontSize),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const QuizPage3()));
                               },
                               child: Text(
                                 priestNames[10],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                textStyle: TextStyle(fontSize: fontSize),
-                                backgroundColor: Colors.white,
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => QuizPage5()));
-                              },
-                              child: Text(
-                                priestNames[11],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                textStyle: TextStyle(fontSize: fontSize),
-                                backgroundColor: Colors.white,
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => QuizPage5()));
-                              },
-                              child: Text(
-                                priestNames[13],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                textStyle: TextStyle(fontSize: fontSize),
-                                backgroundColor: Colors.white,
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => QuizPage5()));
-                              },
-                              child: Text(
-                                priestNames[12],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                               ),
                             ),
                           ]),

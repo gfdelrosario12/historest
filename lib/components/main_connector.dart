@@ -10,11 +10,13 @@ class MainConnector extends StatefulWidget {
 
 class _MainConnectorState extends State<MainConnector> {
   @override
+  // restarts initial scrore upon load of MainConnector page(quiz pages navigates back to main connector)
   void initState() {
     score = 0;
     super.initState();
   }
 
+// if the current index is zero reviewer page is loaded, if not, quiz page is loaded
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,8 @@ class _MainConnectorState extends State<MainConnector> {
               padding: EdgeInsets.only(top: 35.0),
               child: Image(image: AssetImage('assets/images/Header.png')),
             )),
-        body: currentIndex == 0 ? ReviewerPage() : QuizMainPage(),
+        // bottomNavigationBar is used to change from reviewer and quiz page
+        body: currentIndex == 0 ? const ReviewerPage() : const QuizMainPage(),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Color(colorTheme),
           unselectedItemColor: Color(colorTheme),
@@ -54,6 +57,5 @@ class _MainConnectorState extends State<MainConnector> {
         ),
       ),
     );
-    ;
   }
 }

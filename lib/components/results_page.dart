@@ -30,7 +30,7 @@ class _ResultsPageState extends State<ResultsPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MainConnector()),
+                                  builder: (context) => const MainConnector()),
                             );
                           },
                           child: Text(
@@ -79,7 +79,7 @@ class _ResultsPageState extends State<ResultsPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MainConnector()),
+                              builder: (context) => const MainConnector()),
                         );
                       },
                       child: const Text(
