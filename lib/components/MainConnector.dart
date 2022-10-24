@@ -9,6 +9,12 @@ class MainConnector extends StatefulWidget {
 }
 
 class _MainConnectorState extends State<MainConnector> {
+  @override
+  void initState() {
+    score = 0;
+    super.initState();
+  }
+
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {

@@ -11,7 +11,7 @@ class ReviewerPage extends StatelessWidget {
 
   double dotSize = 20;
 
-  var colorTheme = 0xff343A8E;
+  bool willLeave = false;
 
   @override
   Widget build(BuildContext context) {

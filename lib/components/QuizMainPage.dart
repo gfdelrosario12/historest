@@ -32,7 +32,7 @@ class _QuizMainPageState extends State<QuizMainPage> {
                   backgroundColor: MaterialStateProperty.all(Color(colorTheme)),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
+                  Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => QuizPage1()));
                 },
                 child: const Text(

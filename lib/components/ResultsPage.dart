@@ -10,7 +10,6 @@ class ResultsPage extends StatefulWidget {
 
 class _ResultsPageState extends State<ResultsPage> {
   final String finalScore = score.toString();
-  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -29,21 +28,26 @@ class _ResultsPageState extends State<ResultsPage> {
                             willLeave = true;
                             score = 0;
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MainConnector()));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MainConnector()),
+                            );
                           },
-                          child: const Text(
+                          child: Text(
                             'Yes',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                                color: Colors.white, fontSize: fontSize),
                           )),
                       TextButton(
                           style: TextButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
-                          onPressed: () => Navigator.of(context).pop(),
-                          child: const Text(
-                            'No',
-                            style: TextStyle(color: Colors.white),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text(
+                            "No",
+                            style: TextStyle(
+                                color: Colors.white, fontSize: fontSize),
                           ))
                     ],
                   ));
@@ -65,7 +69,7 @@ class _ResultsPageState extends State<ResultsPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    congratulatoryMessage,
+                    "Congrats you got $score",
                     style: TextStyle(fontSize: fontSize),
                   ),
                   TextButton(
@@ -73,14 +77,14 @@ class _ResultsPageState extends State<ResultsPage> {
                           backgroundColor: Color(colorTheme)),
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MainConnector()));
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MainConnector()),
+                        );
                       },
-                      child: Text(
+                      child: const Text(
                         "Get back to reviewing.",
-                        style:
-                            TextStyle(color: Colors.white, fontSize: fontSize),
+                        style: TextStyle(color: Colors.white),
                       ))
                 ],
               ))),

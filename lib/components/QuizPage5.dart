@@ -13,7 +13,6 @@ class _QuizPage5State extends State<QuizPage5> {
   Widget build(BuildContext context) {
     return WillPopScope(
         onWillPop: () async {
-          bool willLeave = false;
           // show the confirm dialog
           await showDialog(
               context: context,
@@ -27,18 +26,25 @@ class _QuizPage5State extends State<QuizPage5> {
                             willLeave = true;
                             score = 0;
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MainConnector()));
+                              context,
+                              MaterialPageRoute<void>(
+                                  builder: (BuildContext context) =>
+                                      const MainConnector()),
+                            );
                           },
-                          child: const Text('Yes')),
+                          child: Text(
+                            'Yes',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: fontSize),
+                          )),
                       TextButton(
                           style: TextButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
                           onPressed: () => Navigator.of(context).pop(),
-                          child: const Text(
+                          child: Text(
                             'No',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                                color: Colors.white, fontSize: fontSize),
                           ))
                     ],
                   ));
@@ -66,7 +72,7 @@ class _QuizPage5State extends State<QuizPage5> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         "The newly deisgnated parish priest of the parish that will be coming this november 2022.",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 20),
@@ -81,7 +87,6 @@ class _QuizPage5State extends State<QuizPage5> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
-                                print(score);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -99,7 +104,6 @@ class _QuizPage5State extends State<QuizPage5> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
-                                print(score);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -117,7 +121,6 @@ class _QuizPage5State extends State<QuizPage5> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
-                                print(score);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -145,7 +148,8 @@ class _QuizPage5State extends State<QuizPage5> {
                               child: Text(
                                 priestNames[15],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: fontSize),
                               ),
                             ),
                           ]),

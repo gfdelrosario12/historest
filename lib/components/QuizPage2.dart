@@ -27,18 +27,25 @@ class _QuizPage2State extends State<QuizPage2> {
                             willLeave = true;
                             score = 0;
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MainConnector()));
+                              context,
+                              MaterialPageRoute<void>(
+                                  builder: (BuildContext context) =>
+                                      const MainConnector()),
+                            );
                           },
-                          child: const Text('Yes')),
+                          child: Text(
+                            'Yes',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: fontSize),
+                          )),
                       TextButton(
                           style: TextButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
                           onPressed: () => Navigator.of(context).pop(),
-                          child: const Text(
+                          child: Text(
                             'No',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                                color: Colors.white, fontSize: fontSize),
                           ))
                     ],
                   ));
@@ -82,7 +89,6 @@ class _QuizPage2State extends State<QuizPage2> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
-                                print(score);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -100,7 +106,6 @@ class _QuizPage2State extends State<QuizPage2> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
-                                print(score);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -137,7 +142,6 @@ class _QuizPage2State extends State<QuizPage2> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
-                                print(score);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
