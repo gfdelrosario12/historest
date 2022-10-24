@@ -12,9 +12,9 @@ class _QuizPage2State extends State<QuizPage2> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
+        // app is wrapped in willpopscope to stop the user from just exiting with the back button
         onWillPop: () async {
-          bool willLeave = false;
-          // show the confirm dialog
+          // show the confirm dialog to ask if the user will leave or not upon back button tap
           await showDialog(
               context: context,
               builder: (_) => AlertDialog(
@@ -24,8 +24,11 @@ class _QuizPage2State extends State<QuizPage2> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
                           onPressed: () {
+                            // allows the user to leave
                             willLeave = true;
+                            // resets the score upon exit
                             score = 0;
+                            // navigates to the main connector page
                             Navigator.push(
                               context,
                               MaterialPageRoute<void>(
@@ -41,6 +44,7 @@ class _QuizPage2State extends State<QuizPage2> {
                       TextButton(
                           style: TextButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
+                          // stays on the page upon button press
                           onPressed: () => Navigator.of(context).pop(),
                           child: Text(
                             'No',
@@ -79,7 +83,6 @@ class _QuizPage2State extends State<QuizPage2> {
                         style:
                             TextStyle(color: Colors.white, fontSize: fontSize),
                       ),
-                      // ignore: unnecessary_new
                       Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -89,6 +92,7 @@ class _QuizPage2State extends State<QuizPage2> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 3
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -107,6 +111,7 @@ class _QuizPage2State extends State<QuizPage2> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 3
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -125,6 +130,8 @@ class _QuizPage2State extends State<QuizPage2> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 3
+                                // since the third choice is the correct answer, adds 1 to the score
                                 score += 1;
                                 Navigator.push(
                                     context,
@@ -144,6 +151,7 @@ class _QuizPage2State extends State<QuizPage2> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 3
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(

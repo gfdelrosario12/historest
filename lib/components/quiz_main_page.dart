@@ -8,6 +8,7 @@ class QuizMainPage extends StatefulWidget {
   State<QuizMainPage> createState() => _QuizMainPageState();
 }
 
+// portal to get to quizzes
 class _QuizMainPageState extends State<QuizMainPage> {
   @override
   Widget build(BuildContext context) {
@@ -24,11 +25,13 @@ class _QuizMainPageState extends State<QuizMainPage> {
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: fontSize),
               ),
+              // button to enter quizzes
               TextButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Color(colorTheme)),
                 ),
                 onPressed: () {
+                  // navigates to quiz 1
                   Navigator.push(
                       context,
                       MaterialPageRoute(

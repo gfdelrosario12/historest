@@ -5,7 +5,7 @@ var colorTheme = 0xff343A8E;
 // the score in the quiz
 int score = 0;
 // global font size for most text
-double fontSize = 20;
+double fontSize = 15;
 //  text for alert prompt if you want to exit in
 String leaveQuestion = "Are you sure you want to leave the quiz?";
 // boolean verifier if user wants to leave in quiz part

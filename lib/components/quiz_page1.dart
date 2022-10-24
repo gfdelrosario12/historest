@@ -13,10 +13,9 @@ class _QuizPage1State extends State<QuizPage1> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        // app is wrap in willpopscope to stop the user from just exiting with the back button
+        // app is wrapped in willpopscope to stop the user from just exiting with the back button
         onWillPop: () async {
-          // boolean that checks if the user will leave
-          // show the confirm dialog
+          // show the confirm dialog to ask if the user will leave or not upon back button tap
           await showDialog(
               context: context,
               builder: (_) => AlertDialog(
@@ -26,9 +25,12 @@ class _QuizPage1State extends State<QuizPage1> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
                           onPressed: () {
+                            // allows the user to leave
                             willLeave = true;
+                            // resets the score upon exit
                             score = 0;
                             Navigator.push(
+                              // navigates to the main connector page
                               context,
                               MaterialPageRoute<void>(
                                   builder: (BuildContext context) =>
@@ -43,6 +45,7 @@ class _QuizPage1State extends State<QuizPage1> {
                       TextButton(
                           style: TextButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
+                          // stays on the page upon button press
                           onPressed: () => Navigator.of(context).pop(),
                           child: Text(
                             'No',
@@ -53,6 +56,7 @@ class _QuizPage1State extends State<QuizPage1> {
                   ));
           return willLeave;
         },
+        // contains the question and button for choices on each button
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(fontFamily: 'Arial'),
@@ -90,6 +94,8 @@ class _QuizPage1State extends State<QuizPage1> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 2
+                                //since the first choice is the correct answer, adds 1 to the score
                                 score += 1;
                                 Navigator.push(
                                     context,
@@ -109,6 +115,7 @@ class _QuizPage1State extends State<QuizPage1> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 2
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -127,6 +134,7 @@ class _QuizPage1State extends State<QuizPage1> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 2
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -145,6 +153,7 @@ class _QuizPage1State extends State<QuizPage1> {
                                 backgroundColor: Colors.white,
                               ),
                               onPressed: () {
+                                // navigates to the quiz page 2
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(

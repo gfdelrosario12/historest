@@ -13,7 +13,9 @@ class _ResultsPageState extends State<ResultsPage> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
+        // app is wrap in willpopscope to stop the user from just exiting with the back button
         onWillPop: () async {
+          // show the confirm dialog to ask if the user will leave or not upon back button tap
           bool willLeave = false;
           // show the confirm dialog
           await showDialog(
@@ -25,8 +27,11 @@ class _ResultsPageState extends State<ResultsPage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
                           onPressed: () {
+                            // allows the user to leave
                             willLeave = true;
+                            // resets the score upon exit
                             score = 0;
+                            // navigates to the main connector page
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -41,9 +46,8 @@ class _ResultsPageState extends State<ResultsPage> {
                       TextButton(
                           style: TextButton.styleFrom(
                               backgroundColor: Color(colorTheme)),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
+                          // stays on the page upon button press
+                          onPressed: () => Navigator.of(context).pop(),
                           child: Text(
                             "No",
                             style: TextStyle(
@@ -69,6 +73,7 @@ class _ResultsPageState extends State<ResultsPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
+                    // displays congratulatory message with the sum of score
                     "Congrats you got $score",
                     style: TextStyle(fontSize: fontSize),
                   ),
@@ -76,6 +81,7 @@ class _ResultsPageState extends State<ResultsPage> {
                       style: TextButton.styleFrom(
                           backgroundColor: Color(colorTheme)),
                       onPressed: () {
+                        // navigates back to the main connector page
                         Navigator.push(
                           context,
                           MaterialPageRoute(
