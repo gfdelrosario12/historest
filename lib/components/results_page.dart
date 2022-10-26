@@ -81,6 +81,7 @@ class _ResultsPageState extends State<ResultsPage> {
                       style: TextButton.styleFrom(
                           backgroundColor: Color(colorTheme)),
                       onPressed: () {
+                        score = 0;
                         // navigates back to the main connector page
                         Navigator.push(
                           context,
